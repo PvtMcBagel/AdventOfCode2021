@@ -1999,14 +1999,18 @@ input = [118,
 7951,
 7967,
 7963]
-print(input)
 for index, reading in enumerate(input):
     if index == 0:
-        print("No Measurements Yet")
         continue
     previous = input[index-1]
     if reading > previous :
-        print("Increased")
         count = count + 1
-        print(count)
-
+print(count)
+count = 0
+for index, reading in enumerate(input):
+    if index < 3:
+        continue
+    previous = input[index-3]
+    if reading > previous :
+        count = count + 1
+print(count)
